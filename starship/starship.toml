@@ -1,0 +1,50 @@
+# First prompt
+[username]
+format = "[$user]($style) @ "
+style_user = "#E2A0D0"
+style_root = "bold red"
+show_always = true
+
+# makes prompt a single line
+[line_break]
+disabled = true
+
+[cmd_duration]
+format = '[took $duration](fg:#bf5700) '
+
+[localip]
+ssh_only = false
+format = '[$localipv4](bold red) '
+disabled = true
+
+[battery]
+full_symbol = '🔋'
+charging_symbol = '⚡️'
+discharging_symbol = '💀'
+format = '[$symbol$percentage]($style) '
+
+[[battery.display]]
+threshold = 15
+style = 'bold red'
+
+[[battery.display]]
+threshold = 50
+style = 'bold yellow'
+
+[[battery.display]]
+threshold = 90
+style = 'bold green'
+
+[directory]
+style = "purple"
+truncation_length = 0
+truncate_to_repo = true
+truncation_symbol = " : "
+
+[git_branch]
+always_show_remote = true
+format = 'on [$symbol$branch[:$remote_branch](fg:#00CDFF)]($style) '
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = '🔖 '
