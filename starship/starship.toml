@@ -48,3 +48,19 @@ format = 'on [$symbol$branch[:$remote_branch](fg:#00CDFF)]($style) '
 [git_commit]
 commit_hash_length = 4
 tag_symbol = '🔖 '
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = '=$count '
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+up_to_date = ''
+untracked = '[?$count](purple) '
+stashed = '$$count '
+modified = '[!$count](cyan) '
+staged = '[+$count](green) '
+renamed = '»$count '
+deleted = '✘$count '
+typechanged = ""
+windows_starship = '/mnt/c/Users/username/scoop/apps/starship/current/starship.exe'
