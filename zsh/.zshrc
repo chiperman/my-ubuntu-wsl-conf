@@ -108,8 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Fetch Windows ip address inside WSL environment
-WINDOWS_IP=$(ip route | grep default | awk '{print $3}')
+# WINDOWS_IP=$(ip route | grep default | awk '{print $3}')
+WINDOWS_IP="localhost"
 PROXY_HTTP="http://${WINDOWS_IP}:7890"
+PROXY_HTTPS="https://${WINDOWS_IP}:7890"
 PROXY_SOCKS5="${WINDOWS_IP}:7890"
 
 # Git & SSH for Git proxy
@@ -138,7 +140,7 @@ delete_ssh_config() {
 # Set proxy
 set_proxy () {
   export http_proxy="${PROXY_HTTP}"
-  export https_proxy="${PROXY_HTTP}"
+  export https_proxy="${PROXY_HTTPS}"
   proxy_git
 }
 

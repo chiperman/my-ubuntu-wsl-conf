@@ -5,12 +5,10 @@ inoremap jk <Esc>
 set number
 " 设置行号列宽
 set numberwidth=3
-
-" 突出显示当前行
-set nocursorline
-
+" 显示光标所在的当前行的行号，其它行都为相对于该行的相对行号
+set relativenumber
 " 显示括号匹配
-set showmatch 
+set showmatch
 
 " 使用 Vim-Plug 作为插件管理器的例子
 call plug#begin('~/.vim/plugged')
