@@ -122,7 +122,7 @@ proxy_git () {
     echo "  User git" >> ~/.ssh/config
     echo "  ProxyCommand nc -X 5 -x ${PROXY_SOCKS5} %h %p" >> ~/.ssh/config
   else
-    lino=$(($(awk '/Host github.com/{print NR}'  ~/.ssh/config)+2))
+    lino=$(($(awk '/Host github.com/{print NR}'  ~/.ssh/config)+4))
     sed -i "${lino}c\  ProxyCommand nc -X 5 -x ${PROXY_SOCKS5} %h %p" ~/.ssh/config
   fi
 }
@@ -149,7 +149,7 @@ unset_proxy () {
   unset http_proxy
   unset https_proxy
   git config --global --unset http.https://github.com.proxy
-  delete_ssh_config
+  # delete_ssh_config
 }
 
 # Set alias
@@ -157,7 +157,7 @@ alias proxy=set_proxy
 alias deproxy=unset_proxy
 
 # run proxy automatically
-proxy
+# proxy
 
 # create alias
 alias bat='/usr/bin/batcat'
